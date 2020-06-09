@@ -2,21 +2,21 @@ package com.company;
 
 public class isPalindrome {
     public static boolean isPalindrome (int number) {
-        if(number < 0) {
-            number *= -1;
-        }
+        int originalnumber = number;
         int reverse = 0;
-        int startingNumber = number;
         while (number != 0) {
             int lastDigit = number % 10;
+            System.out.println("lastDigit" + lastDigit);
             reverse = reverse * 10;
-            reverse += lastDigit;
+            reverse = lastDigit + reverse;
+            System.out.println(reverse);
             number = number / 10;
         }
-        if (startingNumber == reverse) {
+        if (reverse == originalnumber) {
             return true;
+        }else {
+            return false;
         }
-        return false;
     }
 }
 
